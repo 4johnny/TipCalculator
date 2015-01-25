@@ -30,8 +30,14 @@
 
 
 - (IBAction)calculateTip {
+	
+	[self.billAmountTextField resignFirstResponder];
 
-	self.tipAmountLabel.text = [NSString stringWithFormat:@"%.2f", self.billAmountTextField.text.intValue * 0.15];
+	double billAmount = self.billAmountTextField.text.doubleValue;
+	double tipPercentage = self.tipPercentageTextField.text.doubleValue / 100;
+	double tipAmount =  billAmount * tipPercentage;
+	
+	self.tipAmountLabel.text = [NSString stringWithFormat:@"%.2f", tipAmount];
 }
 
 

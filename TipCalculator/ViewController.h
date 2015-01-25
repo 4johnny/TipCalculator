@@ -12,6 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *billAmountTextField;
 
+@property (weak, nonatomic) IBOutlet UITextField *tipPercentageTextField;
+
 @property (weak, nonatomic) IBOutlet UILabel *tipAmountLabel;
 
 @end
