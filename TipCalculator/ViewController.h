@@ -14,6 +14,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *tipPercentageTextField;
 
+@property (weak, nonatomic) IBOutlet UISlider *tipPercentageSlider;
+
 @property (weak, nonatomic) IBOutlet UILabel *tipAmountLabel;
 
 @end

@@ -19,9 +19,9 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bill Amount" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xbe-wK-SGe">
                                 <rect key="frame" x="16" y="45" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                                 <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="28" width="119" height="30"/>
+                                    <rect key="frame" x="16" y="28" width="106" height="30"/>
                                 </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50w-51-Hb0">
@@ -30,7 +30,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="142" width="119" height="30"/>
+                                    <rect key="frame" x="16" y="142" width="106" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="calculateTip" destination="BYZ-38-t0r" eventType="touchUpInside" id="xgO-x9-9fS"/>
@@ -43,17 +43,26 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="104" width="119" height="30"/>
+                                    <rect key="frame" x="16" y="104" width="106" height="30"/>
                                 </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tip Percentage" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RYd-sL-7mW">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tip %" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RYd-sL-7mW">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                 <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="66" width="119" height="30"/>
+                                    <rect key="frame" x="16" y="66" width="106" height="30"/>
                                 </variation>
                             </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="e4k-zS-a5c">
+                                <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="128" y="66" width="154" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="tipPercentageChanged" destination="BYZ-38-t0r" eventType="valueChanged" id="DC0-pu-22M"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -61,6 +70,7 @@
                                 <exclude reference="50w-51-Hb0"/>
                                 <exclude reference="fuf-s3-Yxy"/>
                                 <exclude reference="RYd-sL-7mW"/>
+                                <exclude reference="e4k-zS-a5c"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -68,18 +78,20 @@
                                 <include reference="50w-51-Hb0"/>
                                 <include reference="fuf-s3-Yxy"/>
                                 <include reference="RYd-sL-7mW"/>
+                                <include reference="e4k-zS-a5c"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="billAmountTextField" destination="Xbe-wK-SGe" id="cfs-bE-heF"/>
                         <outlet property="tipAmountLabel" destination="fuf-s3-Yxy" id="d5q-8d-rsu"/>
+                        <outlet property="tipPercentageSlider" destination="e4k-zS-a5c" id="TTs-pF-N7j"/>
                         <outlet property="tipPercentageTextField" destination="RYd-sL-7mW" id="t8E-Pn-ErD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="394" y="336.75"/>
+            <point key="canvasLocation" x="256" y="337.5"/>
         </scene>
     </scenes>
 </document>
